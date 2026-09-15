@@ -1,0 +1,1050 @@
+<!DOCTYPE html>
+<html lang="es">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Emilio Benítez — Saco productos a producción</title>
+<meta name="description" content="Desarrollador full stack autónomo. Saco productos a producción para startups y empresas pequeñas, sin montar equipo ni agencia de por medio.">
+<link rel="canonical" href="https://emiliobenitez.com/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23F2F1EC'/%3E%3Cpath d='M20 46V18h24v7H27v4h15v7H27v3h17v7z' fill='%23C9241A'/%3E%3C/svg%3E">
+<meta name="author" content="Emilio Benítez">
+<meta name="theme-color" content="#F2F1EC">
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_ES">
+<meta property="og:site_name" content="Emilio Benítez">
+<meta property="og:url" content="https://emiliobenitez.com/">
+<meta property="og:title" content="Emilio Benítez — Saco productos a producción">
+<meta property="og:description" content="Desarrollador full stack autónomo. Saco productos a producción para startups y empresas pequeñas, sin montar equipo ni agencia de por medio.">
+<meta property="og:image" content="https://emiliobenitez.com/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Emilio Benítez, desarrollador full stack">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Emilio Benítez — Saco productos a producción">
+<meta name="twitter:description" content="Desarrollador full stack autónomo para startups y empresas pequeñas.">
+<meta name="twitter:image" content="https://emiliobenitez.com/og.png">
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"Person",
+  "name":"Emilio Benítez",
+  "url":"https://emiliobenitez.com/",
+  "jobTitle":"Desarrollador full stack",
+  "email":"mailto:emilio@emiliobenitez.com",
+  "telephone":"+34693062420",
+  "address":{"@type":"PostalAddress","addressLocality":"Jumilla","addressRegion":"Murcia","addressCountry":"ES"},
+  "sameAs":["https://github.com/EmilioBeLo","https://linkedin.com/in/emilio-benitez-317040381"],
+  "knowsAbout":["React","Supabase","PostgreSQL","Python","FastAPI","Angular","n8n","Chatbots","Integración de modelos de lenguaje","Automatización de procesos"],
+  "knowsLanguage":["es","en"]
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700;9..144,900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --paper:#F2F1EC; --ink:#14140F; --grey:#6B6B62;
+  --line:#CFCDC4; --accent:#C9241A;
+  --display:'Fraunces',Georgia,serif;
+  --body:'JetBrains Mono',ui-monospace,monospace;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:15px;line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit}
+::selection{background:var(--accent);color:var(--paper)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:4px}
+.col{width:min(1180px,100% - 44px);margin-inline:auto}
+.salto{position:absolute;left:-9999px;top:0;z-index:200;background:var(--ink);color:var(--paper);padding:12px 20px;text-decoration:none;font-weight:700}
+.salto:focus{left:12px;top:12px}
+
+/* ── vistas ── */
+.vista{display:none}
+.vista.activa{display:block}
+
+/* ── navegación ── */
+.nav{position:sticky;top:0;z-index:40;background:var(--paper);border-bottom:1px solid var(--line)}
+.nav .col{display:flex;justify-content:space-between;align-items:center;padding:14px 0}
+.nav .mark{font-family:var(--display);font-weight:900;font-size:16px;letter-spacing:-.02em;text-decoration:none}
+.nav ul{display:flex;gap:26px;margin:0;padding:0;list-style:none;font-size:13px}
+.nav a{text-decoration:none;color:var(--grey);padding-bottom:3px;border-bottom:1.5px solid transparent}
+.nav a:hover{color:var(--ink)}
+.nav a.aqui{color:var(--ink);border-color:var(--accent)}
+
+/* ── titulares ── */
+h1.main{font-family:var(--display);font-weight:900;font-size:clamp(32px,6.2vw,86px);line-height:1.02;letter-spacing:-.028em;margin:0 0 28px;max-width:17ch}
+h1.main em{font-style:normal;color:var(--accent)}
+h2.big{font-family:var(--display);font-weight:900;font-size:clamp(26px,4.2vw,52px);letter-spacing:-.025em;line-height:1.02;margin:0 0 5vh;max-width:19ch;position:relative;padding-bottom:16px}
+h2.big::after{content:'';position:absolute;left:0;bottom:0;height:2px;width:100%;background:var(--accent);transform:scaleX(0);transform-origin:0 50%}
+h2.big.in::after{transform:scaleX(1);transition:transform .9s cubic-bezier(.16,1,.3,1)}
+.kicker{font-weight:700;font-size:12px;letter-spacing:.14em;color:var(--accent);margin:0 0 26px}
+.lede{font-size:clamp(15px,1.5vw,18px);color:var(--grey);max-width:52ch}
+.lede b{color:var(--ink);font-weight:700}
+
+/* ── botones ── */
+.cta{display:inline-block;font-family:var(--body);font-weight:700;font-size:15px;background:var(--ink);color:var(--paper);text-decoration:none;padding:15px 28px;border-radius:2px;transition:background .25s ease;border:none;cursor:inherit}
+.cta:hover{background:var(--accent)}
+.cta.ghost{background:transparent;color:var(--ink);border:1.5px solid var(--ink);margin-left:12px}
+.cta.ghost:hover{background:var(--ink);color:var(--paper)}
+
+/* ── cursor ── */
+#estela{position:fixed;inset:0;z-index:100;pointer-events:none;width:100%;height:100%}
+.cur{position:fixed;top:0;left:0;z-index:101;pointer-events:none;width:8px;height:8px;margin:-4px 0 0 -4px;border-radius:50%;border:1.5px solid var(--accent);will-change:transform;transition:width .3s cubic-bezier(.16,1,.3,1),height .3s cubic-bezier(.16,1,.3,1),margin .3s cubic-bezier(.16,1,.3,1),background .3s ease}
+.cur.hot{width:38px;height:38px;margin:-19px 0 0 -19px;background:rgba(201,36,26,.14)}
+@media (hover:hover){body{cursor:none}}
+@media (hover:none){#estela,.cur{display:none}}
+.meter{position:fixed;z-index:41;left:0;top:0;height:2px;width:100%;transform:scaleX(0);transform-origin:0 50%;background:var(--accent)}
+
+.ruled{border-top:1px solid var(--ink)}
+.ruled>div{padding:26px 0;border-bottom:1px solid var(--line)}
+
+/* ── INICIO ── */
+.hero{padding:16vh 0 12vh}
+.hero .lede{margin:0 0 40px}
+.fit{padding:12vh 0;border-top:1px solid var(--line)}
+.fit .col{display:grid;grid-template-columns:1fr 1fr;gap:56px}
+.fit h3{font-family:var(--display);font-weight:700;font-size:21px;margin:0 0 18px;letter-spacing:-.02em}
+.fit ul{margin:0;padding:0;list-style:none}
+.fit li{padding:11px 0 11px 26px;border-bottom:1px solid var(--line);position:relative;color:var(--grey)}
+.fit li::before{position:absolute;left:0;top:11px;font-weight:700}
+.si li::before{content:'+';color:var(--accent)}
+.no li::before{content:'—';color:var(--line)}
+
+.calc{padding:12vh 0;border-top:1px solid var(--line)}
+.calc .wrap{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start}
+.field{margin:0 0 28px}
+.field label{display:block;font-size:13px;color:var(--grey);margin:0 0 8px}
+.field input[type=range]{width:100%;accent-color:var(--accent);height:22px}
+.field .val{font-family:var(--display);font-weight:700;font-size:25px;letter-spacing:-.02em}
+.out{border:1px solid var(--ink);padding:30px 28px}
+.out .lead{font-size:13px;color:var(--grey);margin:0 0 6px}
+.out .fig{font-family:var(--display);font-weight:900;font-size:clamp(32px,5.2vw,62px);line-height:1;letter-spacing:-.03em;color:var(--accent);margin:0 0 4px}
+.out .unit{font-size:12px;color:var(--grey);margin:0 0 26px}
+.out hr{border:none;border-top:1px solid var(--line);margin:0 0 22px}
+.out .fig.small{font-size:clamp(20px,2.8vw,33px);color:var(--ink)}
+.disc{font-size:12px;color:var(--grey);margin:22px 0 0;line-height:1.6}
+
+.peek{padding:12vh 0;border-top:1px solid var(--line)}
+.peek .ruled>div{display:grid;grid-template-columns:150px 1fr 130px;gap:28px;align-items:center}
+.mini{position:relative}
+.mini canvas{width:100%;height:92px;display:block}
+.mini .tagline{display:block;margin-top:8px}
+.peek .tagline{font-weight:700;font-size:12px;letter-spacing:.1em;color:var(--accent)}
+.peek h3{font-family:var(--display);font-weight:700;font-size:clamp(19px,2.4vw,30px);margin:0 0 6px;letter-spacing:-.025em;line-height:1.1}
+.peek p{margin:0;color:var(--grey);max-width:50ch}
+.peek .go{font-size:12px;font-weight:700;text-decoration:none;border-bottom:1.5px solid var(--accent);padding-bottom:2px;white-space:nowrap}
+
+.flow{padding:12vh 0;border-top:1px solid var(--line)}
+.flow .ruled>div{display:grid;grid-template-columns:100px 1fr 1.2fr;gap:28px;align-items:baseline}
+.flow .w{font-weight:700;color:var(--accent);font-size:13px}
+.flow h4{font-family:var(--display);font-weight:700;font-size:20px;margin:0;letter-spacing:-.02em}
+.flow p{margin:0;color:var(--grey)}
+
+.proof{padding:12vh 0;border-top:1px solid var(--line)}
+.quotes{display:grid;grid-template-columns:1fr 1fr;gap:52px}
+blockquote{margin:0;padding:0 0 0 22px;border-left:2px solid var(--accent)}
+blockquote p{margin:0 0 14px;font-family:var(--display);font-size:clamp(17px,1.9vw,21px);line-height:1.35}
+blockquote cite{font-style:normal;font-size:12px;color:var(--grey);font-weight:700;letter-spacing:.04em}
+
+.end{padding:14vh 0 12vh;border-top:1px solid var(--line)}
+.end p{color:var(--grey);max-width:46ch;margin:0 0 36px}
+
+/* ── TRABAJO ── */
+.intro{padding:14vh 0 8vh}
+.act{position:relative}
+.stage{position:sticky;top:52px;height:calc(100svh - 52px);display:flex;align-items:center}
+.stage .col{display:grid;gap:52px;align-items:center}
+.act:nth-of-type(1) .stage .col{grid-template-columns:1.05fr .95fr}
+.act:nth-of-type(2) .stage .col{grid-template-columns:.85fr 1.15fr}
+.act:nth-of-type(2) .words{order:2}.act:nth-of-type(2) .art{order:1}
+.act:nth-of-type(3) .stage .col{grid-template-columns:1.2fr .8fr;align-items:end}
+.words{position:relative;height:min(58vh,470px)}
+.step{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;opacity:0;transition:opacity .45s ease;pointer-events:none}
+.step.on{opacity:1;pointer-events:auto}
+.label{font-weight:700;font-size:11px;letter-spacing:.16em;color:var(--accent);margin:0 0 16px}
+.step h2{font-family:var(--display);font-weight:700;font-size:clamp(23px,3.2vw,40px);line-height:1.04;letter-spacing:-.025em;margin:0 0 18px;max-width:18ch}
+.step p{margin:0;color:var(--grey);max-width:40ch}
+.step p b{color:var(--ink);font-weight:700}
+.art{position:relative;height:min(64vh,540px)}
+.art canvas{width:100%;height:100%;display:block}
+.who{position:absolute;left:0;bottom:-28px;font-weight:700;font-size:11px;letter-spacing:.1em;color:var(--accent)}
+
+.scars{padding:12vh 0;border-top:1px solid var(--line)}
+.scars .sub{color:var(--grey);max-width:48ch;margin:-3vh 0 5vh}
+.scars .ruled>div{display:grid;grid-template-columns:1fr 1.3fr;gap:38px;align-items:baseline}
+.scars h3{font-family:var(--display);font-weight:700;font-size:clamp(18px,2vw,25px);margin:0;letter-spacing:-.02em;line-height:1.1}
+.scars p{margin:0;color:var(--grey);max-width:46ch}
+
+.more{padding:12vh 0;border-top:1px solid var(--line)}
+.more .sub{color:var(--grey);max-width:50ch;margin:-3vh 0 4vh}
+.chips{display:flex;flex-wrap:wrap;gap:10px}
+.chips span{border:1px solid var(--line);border-radius:99px;padding:6px 14px;font-size:13px;color:var(--grey)}
+.chips span.key{border-color:var(--accent);color:var(--accent);font-weight:700}
+
+/* ── CV ── */
+.head{padding:12vh 0 8vh}
+.head .datos{display:flex;flex-wrap:wrap;gap:8px 28px;font-size:14px;color:var(--grey);margin:24px 0 32px}
+.bloque{padding:0 0 9vh}
+.bloque h2{font-family:var(--display);font-weight:900;font-size:clamp(20px,2.4vw,28px);letter-spacing:-.02em;margin:0 0 22px}
+.tl{border-top:1px solid var(--ink)}
+.row{display:grid;grid-template-columns:130px 1fr 220px;gap:26px;padding:24px 0;border-bottom:1px solid var(--line);align-items:baseline}
+.yr{font-weight:700;font-size:12px;color:var(--accent);letter-spacing:.04em}
+.rl h3{font-family:var(--display);font-weight:700;font-size:clamp(17px,1.9vw,22px);margin:0 0 3px;letter-spacing:-.02em}
+.rl .org{color:var(--grey);font-size:13px;margin:0 0 8px}
+.rl p{margin:0;color:var(--grey);font-size:14px;max-width:50ch}
+.tg{display:flex;flex-wrap:wrap;gap:6px;align-content:start}
+.tg span{font-size:11px;border:1px solid var(--line);border-radius:99px;padding:2px 9px;color:var(--grey);white-space:nowrap}
+.tg span.key{border-color:var(--accent);color:var(--accent);font-weight:700}
+.skills{display:grid;grid-template-columns:repeat(3,1fr);gap:40px}
+.sk{border-top:1px solid var(--ink)}
+.sk h4{font-weight:700;font-size:12px;letter-spacing:.14em;color:var(--accent);margin:14px 0}
+.sk ul{margin:0;padding:0;list-style:none;font-size:14px;color:var(--grey);line-height:2}
+.sk.first li:nth-child(-n+3){color:var(--ink);font-weight:700}
+.bio{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+.bio p{margin:0 0 18px;max-width:46ch}
+.mugshot{width:146px;height:182px;margin:0 0 24px;border:1px dashed var(--line);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;font-size:11px;font-weight:700;letter-spacing:.1em;color:var(--grey);padding:14px;gap:8px}
+.mugshot small{font-weight:400;letter-spacing:0;line-height:1.4;opacity:.85}
+.facts{margin:0;padding:0;list-style:none}
+.facts li{display:flex;justify-content:space-between;gap:20px;padding:12px 0;border-bottom:1px solid var(--line);font-size:14px}
+.facts li span:first-child{color:var(--grey)}
+
+/* ── huecos ── */
+.hueco{position:relative}
+.hueco::after{content:'PENDIENTE';position:absolute;top:6px;right:0;font-weight:700;font-size:9px;letter-spacing:.14em;color:var(--accent);border:1px solid var(--accent);border-radius:99px;padding:2px 8px}
+.hueco p{color:var(--accent)}
+
+footer{border-top:1px solid var(--line);padding:6vh 0 5vh;font-size:13px;color:var(--grey)}
+footer .col{display:flex;flex-wrap:wrap;gap:12px 30px;justify-content:space-between}
+footer a{text-decoration:none;border-bottom:1px solid var(--line);padding-bottom:2px}
+footer a:hover{color:var(--accent);border-color:var(--accent)}
+
+@media (prefers-reduced-motion:reduce){h2.big::after{transform:scaleX(1)}}
+@media (max-width:900px){
+  .nav ul{gap:16px}
+  .cta.ghost{margin:12px 0 0}
+  .fit .col,.calc .wrap,.quotes,.skills,.bio{grid-template-columns:1fr;gap:34px}
+  .peek .ruled>div,.flow .ruled>div,.scars .ruled>div,.row{grid-template-columns:1fr;gap:10px}
+  .stage{height:auto;position:static;padding:10vh 0}
+  .stage .col{grid-template-columns:1fr !important;gap:30px}
+  .act .words{order:2 !important}.act .art{order:1 !important}
+  .words{height:auto}
+  .step{position:relative;opacity:1;pointer-events:auto}
+  .step + .step{margin-top:36px;padding-top:30px;border-top:1px solid var(--line)}
+  .art{height:42svh;position:sticky;top:7vh}
+  .who{position:static;display:block;margin-top:10px}
+}
+
+@media print{
+  .nav,footer,.cur,#estela,.meter,.cta,.mugshot{display:none !important}
+  .vista{display:none !important}
+  #v-cv{display:block !important}
+  body{background:#fff;color:#000;font-size:10.5pt;line-height:1.45;cursor:auto}
+  .col{width:100%;padding:0}
+  .head{padding:0 0 14pt}
+  .bloque{padding:0 0 16pt;break-inside:avoid}
+  h1.main{font-size:24pt;margin:0 0 8pt}
+  .bloque h2{font-size:12pt;margin:0 0 8pt}
+  .row{grid-template-columns:90pt 1fr 130pt;gap:12pt;padding:8pt 0;break-inside:avoid}
+  .lede{font-size:10pt}
+  a{text-decoration:none}
+}
+</style>
+
+<canvas id="estela" aria-hidden="true"></canvas>
+<div class="cur" id="cur" aria-hidden="true"></div>
+<div class="meter" id="meter" aria-hidden="true"></div>
+
+<a class="salto" href="#contenido">Saltar al contenido</a>
+<nav class="nav" aria-label="Secciones">
+  <div class="col">
+    <a class="mark" href="#inicio">Emilio Benítez</a>
+    <ul>
+      <li><a href="#inicio" data-ir="inicio">Inicio</a></li>
+      <li><a href="#trabajo" data-ir="trabajo">Trabajo</a></li>
+      <li><a href="#cv" data-ir="cv">CV</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ══════════ INICIO ══════════ -->
+<div class="vista" id="v-inicio" role="main"><span id="contenido" tabindex="-1"></span>
+  <header class="hero">
+    <div class="col">
+      <p class="kicker">DESARROLLADOR FULL STACK · AUTÓNOMO · REMOTO</p>
+      <h1 class="main">Cada mes que tu producto no sale, <em>es dinero que no facturas</em>.</h1>
+      <p class="lede">Saco productos a producción en startups y empresas pequeñas. <b>Sin montar equipo, sin agencia de por medio y sin dos meses de reuniones antes de escribir la primera línea.</b></p>
+      <a class="cta" href="#inicio" data-scroll="calculadora">Calcula lo que te está costando</a>
+      <a class="cta ghost" href="mailto:emiliobeniloza@gmail.com?subject=Hablamos%2020%20minutos">Hablamos 20 minutos</a>
+    </div>
+  </header>
+
+  <section class="fit">
+    <div class="col">
+      <div>
+        <h3>Encajo bien si…</h3>
+        <ul class="si">
+          <li>Tienes el producto definido y nadie que lo construya</li>
+          <li>Sois menos de veinte y no hay equipo técnico</li>
+          <li>Necesitas meter IA en algo que ya funciona</li>
+          <li>Quieres hablar con quien programa, no con un comercial</li>
+          <li>Prefieres ver algo funcionando antes que un documento</li>
+        </ul>
+      </div>
+      <div>
+        <h3>No encajo si…</h3>
+        <ul class="no">
+          <li>Buscas un equipo de cinco personas</li>
+          <li>Necesitas certificaciones o cumplimiento normativo pesado</li>
+          <li>Quieres pagar en participaciones y no en dinero</li>
+          <li>Buscas investigación de modelos, no producto</li>
+          <li>No hay nadie que pueda decidir rápido</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="calc" id="calculadora">
+    <div class="col">
+      <h2 class="big">¿Cuánto te cuesta el mes que viene sin producto?</h2>
+      <div class="wrap">
+        <div>
+          <div class="field">
+            <label for="precio">Lo que pagaría un cliente al mes</label>
+            <div class="val"><span id="vPrecio">80</span> €</div>
+            <input type="range" id="precio" min="10" max="500" step="10" value="80">
+          </div>
+          <div class="field">
+            <label for="alta">Clientes nuevos al mes cuando esté funcionando</label>
+            <div class="val" id="vAlta">8</div>
+            <input type="range" id="alta" min="1" max="60" step="1" value="8">
+          </div>
+          <div class="field">
+            <label for="meses">Meses que lleva parado</label>
+            <div class="val" id="vMeses">6</div>
+            <input type="range" id="meses" min="1" max="24" step="1" value="6">
+          </div>
+          <p class="disc">Los números los pones tú. No es una promesa de resultados: es aritmética con tus propias cifras para ver el coste de esperar.</p>
+        </div>
+        <div class="out">
+          <p class="lead">Ingresos que no has facturado por el retraso</p>
+          <p class="fig" id="perdido">—</p>
+          <p class="unit">acumulado hasta hoy</p>
+          <hr>
+          <p class="lead">Cada mes más de espera</p>
+          <p class="fig small" id="mensual">—</p>
+          <p class="unit">y sube, porque la base de clientes se acumula</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="peek">
+    <div class="col">
+      <h2 class="big">Tres que están funcionando</h2>
+      <div class="ruled">
+        <div>
+          <div class="mini"><canvas data-mini="solo" aria-hidden="true"></canvas><span class="tagline">PRODUCTO ENTERO</span></div>
+          <div>
+            <h3>Una startup sin nadie que construyera su producto</h3>
+            <p>Entré como único desarrollador. Interfaz, backend, datos y arquitectura. En producción desde noviembre de 2025 y creciendo.</p>
+          </div>
+          <a class="go" href="#trabajo" data-ir="trabajo">Ver el caso</a>
+        </div>
+        <div>
+          <div class="mini"><canvas data-mini="crm" aria-hidden="true"></canvas><span class="tagline">IA SOBRE DATOS</span></div>
+          <div>
+            <h3>Cuatro fuentes de leads que no se cruzaban en ninguna parte</h3>
+            <p>CRM a medida por encima de las herramientas que ya tenían, con chatbots y un chat que responde con las cifras del negocio sin inventárselas.</p>
+          </div>
+          <a class="go" href="#trabajo" data-ir="trabajo">Ver el caso</a>
+        </div>
+        <div>
+          <div class="mini"><canvas data-mini="reservas" aria-hidden="true"></canvas><span class="tagline">EN PRODUCCIÓN</span></div>
+          <div>
+            <h3>Un negocio local que llevaba las reservas en papel</h3>
+            <p>Plataforma de reservas, usuarios y servicios. Se usa a diario.</p>
+          </div>
+          <a class="go" href="#trabajo" data-ir="trabajo">Ver el caso</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="flow">
+    <div class="col">
+      <h2 class="big">Cómo funciona trabajar conmigo</h2>
+      <div class="ruled">
+        <div><span class="w">DÍA 0</span><h4>Llamada de 20 minutos</h4><p>Me cuentas qué quieres sacar y para cuándo. Si no encaja, te lo digo ahí mismo.</p></div>
+        <div><span class="w">SEMANA 1</span><h4>Alcance y precio cerrados</h4><p>Qué entra, qué no entra y cuánto cuesta. Sin facturas sorpresa a mitad de proyecto.</p></div>
+        <div><span class="w">SEMANA 2</span><h4>Algo que puedas tocar</h4><p>No una presentación. Un enlace. A partir de ahí iteramos sobre cosa real.</p></div>
+        <div><span class="w">DESPUÉS</span><h4>En producción y mantenido</h4><p>Lo despliego, lo dejo funcionando y sigo disponible para lo que venga.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="proof">
+    <div class="col">
+      <h2 class="big">Lo que dicen de trabajar conmigo</h2>
+      <div class="quotes">
+        <blockquote class="hueco"><p><b>RELLENA.</b> Frase real de un cliente. Pídesela y pide permiso para publicarla.</p><cite>Nombre · Cargo</cite></blockquote>
+        <blockquote class="hueco"><p><b>RELLENA.</b> Alguien de Hablaoo o tu tutor de Braga. Nombre y cargo reales o no lo pongas.</p><cite>Nombre · Cargo</cite></blockquote>
+      </div>
+    </div>
+  </section>
+
+  <section class="end">
+    <div class="col">
+      <h2 class="big">Veinte minutos y sabes si te sirvo.</h2>
+      <p>Si no encajo, te lo digo en esa llamada y te ahorro el proceso.</p>
+      <a class="cta" href="mailto:emiliobeniloza@gmail.com?subject=Hablamos%2020%20minutos">Escríbeme</a>
+      <a class="cta ghost" href="#cv" data-ir="cv">Ver mi CV</a>
+    </div>
+  </section>
+</div>
+
+<!-- ══════════ TRABAJO ══════════ -->
+<div class="vista" id="v-trabajo">
+  <header class="intro">
+    <div class="col">
+      <p class="kicker">TRES PROYECTOS EN PRODUCCIÓN</p>
+      <h1 class="main">No el resultado bonito. <em>Las decisiones.</em></h1>
+      <p class="lede">Cómo encontré cada proyecto, qué descarté y por qué. Baja para que cada uno se vaya construyendo.</p>
+    </div>
+  </header>
+
+  <main>
+    <article class="act" data-escena="solo" data-pasos="2">
+      <div class="stage"><div class="col">
+        <div class="words">
+          <div class="step" data-paso="0">
+            <p class="label">CÓMO ENTRÉ</p>
+            <h2>Una startup con el producto en la cabeza y nadie para construirlo.</h2>
+            <p>Era el único desarrollador. Sin código heredado y sin nadie a quien preguntar cuando algo no salía.</p>
+          </div>
+          <div class="step" data-paso="1">
+            <p class="label">DÓNDE ESTÁ HOY</p>
+            <h2>Levantar la aplicación fue lo fácil.</h2>
+            <p>Lo que enseña es mantenerla viva mientras el negocio cambia de idea. <b>En producción desde noviembre de 2025.</b></p>
+          </div>
+        </div>
+        <div class="art"><canvas data-lienzo aria-hidden="true"></canvas><span class="who">HABLAOO · PRODUCTO ENTERO, UNA PERSONA</span></div>
+      </div></div>
+      <div style="height:200vh" aria-hidden="true"></div>
+    </article>
+
+    <article class="act" data-escena="crm" data-pasos="4">
+      <div class="stage"><div class="col">
+        <div class="words">
+          <div class="step" data-paso="0">
+            <p class="label">CÓMO LO ENCONTRÉ</p>
+            <h2>Los leads entraban por cuatro sitios.</h2>
+            <p>Cada sitio tenía un trozo de la verdad y ninguno la tenía entera.</p>
+          </div>
+          <div class="step" data-paso="1">
+            <p class="label">LO QUE COSTABA</p>
+            <h2>Saber qué campaña trajo a un cliente costaba media mañana.</h2>
+            <p>Nadie lo veía como un problema porque siempre se había hecho así.</p>
+          </div>
+          <div class="step" data-paso="2">
+            <p class="label">POR QUÉ NO USÉ LO QUE YA TENÍAN</p>
+            <h2>La herramienta estándar se les había quedado corta.</h2>
+            <p>El dato de campañas vive en la plataforma de anuncios y ahí no entra. Construí una capa encima que habla con las dos.</p>
+          </div>
+          <div class="step" data-paso="3">
+            <p class="label">LA IA, CON CONDICIONES</p>
+            <h2>Un chat que responde con los datos reales del negocio.</h2>
+            <p><b>Lo difícil no fue montarlo, fue que no mintiera.</b> Si falla una cifra, ya nadie se fía del resto.</p>
+          </div>
+        </div>
+        <div class="art"><canvas data-lienzo aria-hidden="true"></canvas><span class="who">EMPRESA DE 10 PERSONAS · IA SOBRE DATOS REALES</span></div>
+      </div></div>
+      <div style="height:320vh" aria-hidden="true"></div>
+    </article>
+
+    <article class="act" data-escena="reservas" data-pasos="2">
+      <div class="stage"><div class="col">
+        <div class="words">
+          <div class="step" data-paso="0">
+            <p class="label">EL ENCARGO</p>
+            <h2>Un negocio local llevando las reservas en papel.</h2>
+            <p>Gestión de reservas, usuarios y servicios. Construido entre dos.</p>
+          </div>
+          <div class="step" data-paso="1">
+            <p class="label">DÓNDE ESTÁ</p>
+            <h2>En producción, usándose.</h2>
+            <p><b><a href="https://tfg-mocha.vercel.app" style="border-bottom:2px solid currentColor;text-decoration:none">Verlo funcionando</a></b></p>
+          </div>
+        </div>
+        <div class="art"><canvas data-lienzo aria-hidden="true"></canvas><span class="who">OASIS CLUB · EN PRODUCCIÓN</span></div>
+      </div></div>
+      <div style="height:180vh" aria-hidden="true"></div>
+    </article>
+  </main>
+
+  <section class="scars">
+    <div class="col">
+      <h2 class="big">Lo que salió mal</h2>
+      <p class="sub">Todos los portfolios enseñan el final bonito. Estas son las veces que me equivoqué.</p>
+      <div class="ruled">
+        <div class="hueco"><h3>El chat se inventó una cifra</h3><p><b>RELLENA.</b> Qué pasó, qué tenías mal montado y qué cambiaste. Dos o tres frases, sin adornos.</p></div>
+        <div class="hueco"><h3>Algo que tuve que rehacer entero</h3><p><b>RELLENA.</b> Qué decidiste mal al principio y cuánto tardaste en darte cuenta.</p></div>
+        <div class="hueco"><h3>Un fallo en producción</h3><p><b>RELLENA.</b> El fallo, cómo te enteraste y qué hiciste esa tarde.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="more">
+    <div class="col">
+      <h2 class="big">También hago esto</h2>
+      <p class="sub">No lo vendo de entrada, pero si el proyecto se tuerce hacia aquí no se me cae de las manos.</p>
+      <div class="chips">
+        <span class="key">Automatización con n8n</span>
+        <span class="key">Chatbots</span>
+        <span class="key">Integraciones por webhooks</span>
+        <span>Aplicaciones web progresivas</span>
+        <span>Angular</span>
+        <span>Python y FastAPI</span>
+        <span>Posicionamiento multiidioma</span>
+        <span>Tiendas online</span>
+        <span>Prototipado e investigación de usuario</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="end">
+    <div class="col">
+      <h2 class="big">¿Tienes algo parado?</h2>
+      <p>Veinte minutos y sabes si te sirvo. Si no encajo, te lo digo en esa llamada.</p>
+      <a class="cta" href="mailto:emiliobeniloza@gmail.com?subject=Hablamos%2020%20minutos">Escríbeme</a>
+      <a class="cta ghost" href="#cv" data-ir="cv">Ver mi CV</a>
+    </div>
+  </section>
+</div>
+
+<!-- ══════════ CV ══════════ -->
+<div class="vista" id="v-cv">
+  <header class="head">
+    <div class="col">
+      <p class="kicker">CURRÍCULUM</p>
+      <h1 class="main">Emilio Benítez</h1>
+      <p class="lede">Desarrollador full stack. Construyo productos enteros yo solo y les meto IA cuando hace falta.</p>
+      <div class="datos">
+        <span>Jumilla, Murcia</span>
+        <span>Remoto</span>
+        <span>+34 693 062 420</span>
+        <span><a href="mailto:emiliobeniloza@gmail.com">emiliobeniloza@gmail.com</a></span>
+        <span><a href="https://github.com/EmilioBeLo">github.com/EmilioBeLo</a></span>
+      </div>
+      <button class="cta" id="imprimir">Imprimir o guardar en PDF</button>
+    </div>
+  </header>
+
+  <section class="bloque">
+    <div class="col">
+      <h2>Experiencia</h2>
+      <div class="tl">
+        <div class="row">
+          <div class="yr">2026 — HOY</div>
+          <div class="rl">
+            <h3>Desarrollador full stack y automatizaciones</h3>
+            <p class="org">Agencia de marketing online · Remoto</p>
+            <p>CRM a medida integrado con la plataforma de captación y la API de anuncios. Chatbots de captación y cualificación, y un chat de IA que responde sobre datos reales del negocio con control de alucinaciones y aislamiento entre clientes.</p>
+          </div>
+          <div class="tg"><span class="key">IA en producto</span><span class="key">Chatbots</span><span class="key">Integraciones</span><span>React</span><span>Webhooks</span></div>
+        </div>
+        <div class="row">
+          <div class="yr">NOV 2025 — HOY</div>
+          <div class="rl">
+            <h3>Desarrollador full stack</h3>
+            <p class="org">Hablaoo · Startup · Remoto</p>
+            <p>Único desarrollador. Construí la aplicación completa: interfaz, backend, modelo de datos y arquitectura. En producción y en evolución continua.</p>
+          </div>
+          <div class="tg"><span class="key">Producto entero</span><span>React</span><span>Supabase</span><span>PostgreSQL</span></div>
+        </div>
+        <div class="row">
+          <div class="yr">2025 — HOY</div>
+          <div class="rl">
+            <h3>Desarrollo web freelance</h3>
+            <p class="org">Clientes directos · Jumilla, Murcia</p>
+            <p>Del primer contacto a la entrega: requisitos, presupuesto, planificación y despliegue. Auditoría de experiencia de usuario, prototipado y estrategia de posicionamiento multiidioma para un grupo con cuatro webs y tienda online.</p>
+          </div>
+          <div class="tg"><span>UX</span><span>SEO</span><span>WooCommerce</span></div>
+        </div>
+        <div class="row">
+          <div class="yr">MAR — MAY 2026</div>
+          <div class="rl">
+            <h3>Prácticas Erasmus</h3>
+            <p class="org">Esprominho · Braga, Portugal</p>
+            <p>Chatbot conectado a flujos de n8n para automatizar procesos administrativos, y aplicación web progresiva en Angular con backend en Python para la gestión interna del centro. Tres meses trabajando íntegramente en inglés.</p>
+          </div>
+          <div class="tg"><span class="key">n8n</span><span class="key">Chatbots</span><span>Angular</span><span>FastAPI</span><span>PWA</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bloque">
+    <div class="col">
+      <h2>Formación</h2>
+      <div class="tl">
+        <div class="row">
+          <div class="yr">2023 — 2026</div>
+          <div class="rl">
+            <h3>CFGS Desarrollo de Aplicaciones Web</h3>
+            <p class="org">IES José Planes · Murcia</p>
+            <p>Proyecto final: Oasis Club, plataforma de gestión de reservas en producción.</p>
+          </div>
+          <div class="tg"><span>Angular</span><span>Full stack</span></div>
+        </div>
+        <div class="row">
+          <div class="yr">2021 — 2023</div>
+          <div class="rl">
+            <h3>Bachillerato</h3>
+            <p class="org">IES Infanta Elena</p>
+          </div>
+          <div class="tg"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bloque">
+    <div class="col">
+      <h2>Competencias</h2>
+      <div class="skills">
+        <div class="sk first">
+          <h4>IA Y AUTOMATIZACIÓN</h4>
+          <ul>
+            <li>APIs de modelos de lenguaje</li>
+            <li>Chatbots</li>
+            <li>n8n</li>
+            <li>Webhooks e integraciones REST</li>
+            <li>APIs de plataformas de anuncios</li>
+          </ul>
+        </div>
+        <div class="sk">
+          <h4>DESARROLLO</h4>
+          <ul>
+            <li>React · Angular</li>
+            <li>JavaScript · TypeScript</li>
+            <li>Supabase · PostgreSQL</li>
+            <li>Python · FastAPI</li>
+            <li>PHP · Symfony · Java</li>
+          </ul>
+        </div>
+        <div class="sk">
+          <h4>PRODUCTO Y CLIENTE</h4>
+          <ul>
+            <li>Trato directo con cliente</li>
+            <li>Presupuesto y alcance</li>
+            <li>Prototipado</li>
+            <li>SEO internacional</li>
+            <li>Español nativo · Inglés B2</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bloque">
+    <div class="col">
+      <h2>Quién hay detrás</h2>
+      <div class="bio">
+        <div>
+          <div class="mugshot hueco">TU FOTO<br><small>Una normal. Sin filtros, sin traje falso, sin fondo de estudio.</small></div>
+          <p>Trabajo como autónomo, que para una empresa pequeña suele ser lo más cómodo: facturo y ya está, sin altas ni compromisos largos.</p>
+          <p>Cuando no sé hacer algo, lo digo y lo aprendo. Ha pasado en los tres proyectos de este currículum.</p>
+          <p class="hueco"><b>RELLENA.</b> Dos frases sobre algo que no tenga que ver con programar. Es lo único de esta página que nadie puede escribir por ti.</p>
+        </div>
+        <ul class="facts">
+          <li><span>Base</span><span>Jumilla, Murcia</span></li>
+          <li><span>Modalidad</span><span>Remoto</span></li>
+          <li><span>Figura</span><span>Autónomo</span></li>
+          <li><span>Disponibilidad</span><span>Inmediata</span></li>
+          <li><span>Idiomas</span><span>Español · Inglés B2</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</div>
+
+<footer>
+  <div class="col">
+    <span>Emilio Benítez · Jumilla, Murcia</span>
+    <span>
+      <a href="mailto:emiliobeniloza@gmail.com">emiliobeniloza@gmail.com</a> ·
+      <a href="https://github.com/EmilioBeLo">GitHub</a> ·
+      <a href="https://linkedin.com/in/emilio-benitez-317040381">LinkedIn</a>
+    </span>
+  </div>
+</footer>
+
+<script>
+/* ═══ vistas ═══ */
+const VISTAS=['inicio','trabajo','cv'];
+const TITULOS={
+  inicio:'Emilio Benítez — Saco productos a producción',
+  trabajo:'Trabajo — Emilio Benítez',
+  cv:'CV — Emilio Benítez'
+};
+let vistaActual=null;
+
+/* El cambio de vista NUNCA depende del historial ni del hash:
+   dentro de un iframe aislado esas APIs lanzan error y romperían
+   la navegación entera. Se actualizan aparte y si fallan, da igual. */
+
+function mostrar(id){
+  if(!VISTAS.includes(id)) id='inicio';
+  vistaActual=id;
+
+  VISTAS.forEach(v=>{
+    const el=document.getElementById('v-'+v);
+    if(el) el.classList.toggle('activa', v===id);
+  });
+  document.querySelectorAll('a[data-ir]').forEach(a=>{
+    if(a.closest('.nav')) a.classList.toggle('aqui', a.dataset.ir===id);
+  });
+  try{ document.title=TITULOS[id]; }catch(e){}
+
+  arriba();
+  const repintar=()=>{ arriba(); if(window.__remedir) window.__remedir(); if(window.__minis) window.__minis(); };
+  requestAnimationFrame(repintar);
+  setTimeout(repintar,60);
+}
+
+function arriba(){
+  try{ window.scrollTo(0,0); }catch(e){}
+  if(document.scrollingElement) document.scrollingElement.scrollTop=0;
+  document.documentElement.scrollTop=0;
+  document.body.scrollTop=0;
+}
+
+function ir(id){
+  if(id===vistaActual){ 
+    try{ window.scrollTo({top:0,behavior:'smooth'}); }catch(e){ arriba(); }
+    return;
+  }
+  mostrar(id);
+  try{ history.pushState({vista:id},'','#'+id); }
+  catch(e){ try{ location.hash=id; }catch(e2){} }
+}
+
+document.addEventListener('click',e=>{
+  const a=e.target.closest('a[data-ir], .nav .mark');
+  if(!a) return;
+  e.preventDefault();
+  ir(a.dataset.ir || 'inicio');
+});
+
+addEventListener('popstate',()=>{
+  const h=(location.hash||'').replace('#','');
+  mostrar(VISTAS.includes(h)?h:'inicio');
+});
+addEventListener('hashchange',()=>{
+  const h=(location.hash||'').replace('#','');
+  if(VISTAS.includes(h) && h!==vistaActual) mostrar(h);
+});
+
+/* arranque */
+(function(){
+  let inicial='inicio';
+  try{
+    const h=(location.hash||'').replace('#','');
+    if(VISTAS.includes(h)) inicial=h;
+  }catch(e){}
+  mostrar(inicial);
+})();
+
+/* desplazamiento dentro de la misma vista */
+document.addEventListener('click',e=>{
+  const a=e.target.closest('[data-scroll]');
+  if(!a) return;
+  e.preventDefault();
+  const d=document.getElementById(a.dataset.scroll);
+  if(d) d.scrollIntoView({behavior:'smooth',block:'start'});
+});
+
+const btnImprimir=document.getElementById('imprimir');
+if(btnImprimir) btnImprimir.addEventListener('click',()=>{ try{ print(); }catch(e){} });
+
+/* ═══ calculadora ═══ */
+(function(){
+  const P=document.getElementById('precio'),A=document.getElementById('alta'),M=document.getElementById('meses');
+  const vP=document.getElementById('vPrecio'),vA=document.getElementById('vAlta'),vM=document.getElementById('vMeses');
+  const perdido=document.getElementById('perdido'),mensual=document.getElementById('mensual');
+  const eur=n=>new Intl.NumberFormat('es-ES',{maximumFractionDigits:0}).format(Math.round(n))+' €';
+  let act={acum:0,sig:0};
+  function anima(destino){
+    const ini={...act}, t0=performance.now(), dur=420;
+    (function paso(t){
+      const k=Math.min((t-t0)/dur,1), e=1-Math.pow(1-k,3);
+      act.acum=ini.acum+(destino.acum-ini.acum)*e;
+      act.sig =ini.sig +(destino.sig -ini.sig )*e;
+      perdido.textContent=eur(act.acum);
+      mensual.textContent=eur(act.sig);
+      if(k<1) requestAnimationFrame(paso);
+    })(t0);
+  }
+  function calcular(){
+    const p=+P.value,a=+A.value,m=+M.value;
+    vP.textContent=p;vA.textContent=a;vM.textContent=m;
+    anima({acum:p*a*(m*(m+1)/2), sig:p*a*(m+1)});
+  }
+  [P,A,M].forEach(el=>el.addEventListener('input',calcular));
+  calcular();
+})();
+
+/* ═══ cursor y escenas ═══ */
+(function(){
+const quieto=matchMedia('(prefers-reduced-motion: reduce)').matches;
+const curEl=document.getElementById('cur');
+const est=document.getElementById('estela'), ectx=est.getContext('2d');
+const meter=document.getElementById('meter');
+const raton={x:-9999,y:-9999}, cola=[];
+const actos=[...document.querySelectorAll('.act')], lienzos=new Map();
+let T=0;
+
+const medirEstela=()=>{const d=Math.min(devicePixelRatio||1,2);est.width=innerWidth*d;est.height=innerHeight*d;ectx.setTransform(d,0,0,d,0,0);};
+medirEstela(); addEventListener('resize',medirEstela);
+
+addEventListener('pointermove',e=>{
+  raton.x=e.clientX;raton.y=e.clientY;
+  curEl.style.transform='translate('+e.clientX+'px,'+e.clientY+'px)';
+},{passive:true});
+document.querySelectorAll('a,button,input').forEach(el=>{
+  el.addEventListener('pointerenter',()=>curEl.classList.add('hot'));
+  el.addEventListener('pointerleave',()=>curEl.classList.remove('hot'));
+});
+
+const clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
+const suave=p=>p<0?0:p>1?1:p*p*(3-2*p);
+const tramo=(p,a,b)=>suave(clamp((p-a)/(b-a),0,1));
+const R='rgba(201,36,26,', N='rgba(20,20,15,';
+
+function preparar(cv){
+  const ctx=cv.getContext('2d'), d=Math.min(devicePixelRatio||1,2), r=cv.getBoundingClientRect();
+  cv.width=r.width*d; cv.height=r.height*d; ctx.setTransform(d,0,0,d,0,0);
+  return {ctx,w:r.width,h:r.height,box:r};
+}
+const local=st=>({x:raton.x-st.box.left,y:raton.y-st.box.top});
+function empuje(m,x,y,f,r){
+  const d=Math.hypot(x-m.x,y-m.y);
+  if(d>r||d<.5) return {x,y,cerca:0};
+  const k=(r-d)/r;
+  return {x:x+(x-m.x)/d*k*f,y:y+(y-m.y)/d*k*f,cerca:k};
+}
+function punto(ctx,x,y,r,col){ctx.fillStyle=col;ctx.beginPath();ctx.arc(x,y,r,0,Math.PI*2);ctx.fill();}
+function caja(ctx,x,y,w,h,col,gr){ctx.strokeStyle=col;ctx.lineWidth=gr||1.4;ctx.beginPath();ctx.roundRect(x-w/2,y-h/2,w,h,4);ctx.stroke();}
+function rot(ctx,t,x,y,col,al){ctx.fillStyle=col;ctx.font="600 10px 'JetBrains Mono', monospace";ctx.textAlign=al||'center';ctx.fillText(t,x,y);ctx.textAlign='left';}
+
+const ESCENAS={
+ solo(ctx,w,h,p,m){
+  const cx=w*.5, base=h*.76, PZ=['Interfaz','Lógica','Datos','Auth','Despliegue'];
+  const arma=tramo(p,.15,.82);
+  PZ.forEach((pz,i)=>{
+    const e=suave(clamp((arma-i*.09)/.5,0,1));
+    const em=empuje(m,cx+(i%2?1:-1)*(1-e)*(w*.30),base-i*40+(1-e)*-h*.32,20,130);
+    const ult=i===PZ.length-1;
+    ctx.globalAlpha=.3+e*.7;
+    caja(ctx,em.x,em.y,156-i*6,32,(ult||em.cerca>.05)?R+'.9)':N+'.55)',ult?1.9:1.3);
+    rot(ctx,pz,em.x,em.y+4,N+(.5+e*.4)+')');
+    ctx.globalAlpha=1;
+  });
+  const fin=tramo(p,.82,1);
+  if(fin>0){ctx.globalAlpha=fin;rot(ctx,'UNA PERSONA',cx,base+46,R+'.9)');ctx.globalAlpha=1;}
+ },
+ crm(ctx,w,h,p,m){
+  const roto=tramo(p,.14,.24),unir=tramo(p,.30,.58),pipe=tramo(p,.50,.76),bot=tramo(p,.76,.97);
+  const F=['Plataforma A','Anuncios','Hoja cálculo','Mensajería'];
+  const yF=h*.10,yC=h*.33,yP=h*.50,hP=h*.26,yB=h*.86;
+  const src=F.map((f,i)=>{const e=empuje(m,w*(.14+i*.24),yF,16,110);return{f,x:e.x,y:e.y,cerca:e.cerca};});
+  src.forEach((s,i)=>{for(let k=0;k<4;k++){
+    const fa=(T*.34+k*.25+i*.11)%1;
+    ctx.globalAlpha=.3*(1-fa);ctx.strokeStyle=N+'.8)';ctx.lineWidth=1;
+    ctx.beginPath();ctx.roundRect(s.x-9,s.y-42+fa*30,18,11,2);ctx.stroke();ctx.globalAlpha=1;
+  }});
+  src.forEach(s=>{
+    caja(ctx,s.x,s.y,112,30,N+(.35+s.cerca*.5)+')',1.3);
+    ctx.font="600 9px 'JetBrains Mono', monospace";
+    rot(ctx,s.f,s.x,s.y+3,N+(.6+s.cerca*.4)+')');
+  });
+  if(roto>0&&unir<.35){
+    ctx.globalAlpha=roto*(1-unir/.35);
+    for(let i=0;i<3;i++){
+      const mx=(src[i].x+src[i+1].x)/2;
+      ctx.strokeStyle=R+'.8)';ctx.lineWidth=1.5;
+      ctx.beginPath();ctx.moveTo(mx-6,yF+28);ctx.lineTo(mx+6,yF+40);
+      ctx.moveTo(mx+6,yF+28);ctx.lineTo(mx-6,yF+40);ctx.stroke();
+    }
+    rot(ctx,'SIN CRUZAR',w*.5,yF+60,R+'.9)');ctx.globalAlpha=1;
+  }
+  if(unir>0){
+    ctx.globalAlpha=unir;caja(ctx,w*.5,yC,166,44,R+'.95)',2);
+    ctx.font="700 12px 'JetBrains Mono', monospace";rot(ctx,'CRM',w*.5,yC+4,R+'.95)');ctx.globalAlpha=1;
+    src.forEach((s,i)=>{
+      ctx.strokeStyle=R+(.4*unir)+')';ctx.lineWidth=1.1;
+      ctx.setLineDash([3,4]);ctx.lineDashOffset=-T*26;
+      ctx.beginPath();ctx.moveTo(s.x,s.y+16);
+      ctx.bezierCurveTo(s.x,yC-34,w*.5,yC-34,w*.5,yC-23);ctx.stroke();ctx.setLineDash([]);
+      const t=(T*.42+i*.24)%1;
+      punto(ctx,(1-t)**3*s.x+3*(1-t)**2*t*s.x+3*(1-t)*t*t*w*.5+t**3*w*.5,
+                (1-t)**3*(s.y+16)+3*(1-t)**2*t*(yC-34)+3*(1-t)*t*t*(yC-34)+t**3*(yC-23),
+                2.6*unir,R+'.95)');
+    });
+  }
+  if(pipe>0){
+    const ET=['Nuevo','Contactado','Cita','Cliente'];ctx.globalAlpha=pipe;
+    ET.forEach((et,i)=>{
+      const cx=w*(.155+i*.23),cw=w*.185;
+      ctx.strokeStyle=N+'.2)';ctx.lineWidth=1;
+      ctx.beginPath();ctx.roundRect(cx-cw/2,yP,cw,hP,4);ctx.stroke();
+      ctx.font="600 9px 'JetBrains Mono', monospace";rot(ctx,et.toUpperCase(),cx,yP-9,N+'.5)');
+      for(let k=0;k<4-i;k++){
+        const ap=clamp(pipe*7-(i*1.3+k*.5),0,1);if(ap<=0)continue;
+        const cy=yP+14+k*26,d=Math.hypot(cx-m.x,cy-m.y),cerca=d<90?(90-d)/90:0;
+        ctx.globalAlpha=pipe*ap;ctx.fillStyle=R+(.08+cerca*.2)+')';
+        ctx.strokeStyle=R+(.45+cerca*.5)+')';ctx.lineWidth=1;
+        ctx.beginPath();ctx.roundRect(cx-cw/2+7,cy,cw-14,18,3);ctx.fill();ctx.stroke();
+        ctx.globalAlpha=pipe;
+      }
+    });
+    const paso=(T*.34)%4,ci=Math.floor(paso);
+    if(ci<3)punto(ctx,w*(.155+ci*.23)+(w*.23)*suave(paso-ci),yP+hP+16,3.2,R+'.95)');
+    ctx.globalAlpha=1;
+  }
+  if(bot>0){
+    ctx.globalAlpha=bot;
+    ctx.fillStyle=N+'.04)';ctx.strokeStyle=N+'.3)';ctx.lineWidth=1;
+    ctx.beginPath();ctx.roundRect(w*.5-w*.30,yB-26,w*.60,22,11);ctx.fill();ctx.stroke();
+    ctx.font="500 9.5px 'JetBrains Mono', monospace";
+    rot(ctx,'¿cuántos leads trajo la campaña?',w*.5,yB-11,N+'.75)');
+    const resp=tramo(p,.88,.99);
+    if(resp>0){
+      ctx.globalAlpha=bot*resp;ctx.fillStyle=R+'.1)';ctx.strokeStyle=R+'.95)';ctx.lineWidth=1.3;
+      ctx.beginPath();ctx.roundRect(w*.5-w*.22,yB+4,w*.44,22,11);ctx.fill();ctx.stroke();
+      rot(ctx,'la cifra exacta, del dato real',w*.5,yB+19,R+'.95)');ctx.globalAlpha=bot;
+    } else for(let d=0;d<3;d++)punto(ctx,w*.5-10+d*10,yB+15,2,R+(.4+.6*Math.abs(Math.sin(T*3-d*.6)))+')');
+    ctx.globalAlpha=1;
+  }
+ },
+ reservas(ctx,w,h,p,m){
+  const cols=6,filas=5;
+  const gw=Math.min(w*.7,320),gh=Math.min(h*.5,230);
+  const x0=w*.5-gw/2,y0=h*.42-gh/2,cw=gw/cols,ch=gh/filas;
+  const llenar=tramo(p,.22,.9);
+  for(let r=0;r<filas;r++)for(let c=0;c<cols;c++){
+    const t=clamp((llenar*(cols*filas+8)-(r*cols+c))/6,0,1);
+    const px=x0+c*cw,py=y0+r*ch;
+    const d=Math.hypot(px+cw/2-m.x,py+ch/2-m.y),cerca=d<110?(110-d)/110:0;
+    ctx.strokeStyle=N+(.18+cerca*.5)+')';ctx.lineWidth=1;ctx.strokeRect(px,py,cw-3,ch-3);
+    if(t>0){ctx.fillStyle=R+(t*(.3+cerca*.4))+')';ctx.fillRect(px,py,cw-3,ch-3);}
+  }
+  rot(ctx,'RESERVAS',w*.5,y0-18,R+'.9)');
+  const vivo=tramo(p,.9,1);
+  if(vivo>0){
+    ctx.globalAlpha=vivo;
+    punto(ctx,x0+gw+14,y0-22,3+(.5+.5*Math.sin(T*3.4))*1.6,R+'.95)');
+    rot(ctx,'EN VIVO',x0+gw+24,y0-18,R+'.9)','left');
+    ctx.globalAlpha=1;
+  }
+ }
+};
+
+document.querySelectorAll('canvas[data-lienzo]').forEach(cv=>lienzos.set(cv,{}));
+function remedir(){lienzos.forEach((v,cv)=>{if(cv.offsetParent!==null)Object.assign(v,preparar(cv));});}
+window.__remedir=remedir;
+addEventListener('resize',remedir); remedir();
+
+function bucle(){
+  T+=quieto?0:.016;
+  cola.push({x:raton.x,y:raton.y}); if(cola.length>24)cola.shift();
+  ectx.clearRect(0,0,innerWidth,innerHeight);
+  if(cola.length>2){
+    ectx.lineCap='round';ectx.strokeStyle='#C9241A';
+    for(let i=1;i<cola.length;i++){
+      const t=i/cola.length;
+      ectx.globalAlpha=t*t*.3;ectx.lineWidth=t*2.6;
+      ectx.beginPath();ectx.moveTo(cola[i-1].x,cola[i-1].y);ectx.lineTo(cola[i].x,cola[i].y);ectx.stroke();
+    }
+    ectx.globalAlpha=1;
+  }
+  const alto=document.body.scrollHeight-innerHeight;
+  meter.style.transform='scaleX('+(alto>0?clamp(scrollY/alto,0,1):0)+')';
+
+  actos.forEach(acto=>{
+    if(acto.offsetParent===null) return;
+    const r=acto.getBoundingClientRect(),total=acto.offsetHeight-innerHeight;
+    const p=clamp((-r.top)/(total||1),0,1),nP=+acto.dataset.pasos;
+    const idx=clamp(Math.floor(p*nP*.999),0,nP-1);
+    acto.querySelectorAll('.step').forEach(s=>s.classList.toggle('on',+s.dataset.paso===idx));
+    const cv=acto.querySelector('canvas'),st=lienzos.get(cv);
+    if(st&&st.ctx&&r.bottom>0&&r.top<innerHeight*2){
+      st.box=cv.getBoundingClientRect();
+      st.ctx.clearRect(0,0,st.w,st.h);
+      const fn=ESCENAS[acto.dataset.escena];
+      if(fn)fn(st.ctx,st.w,st.h,p,local(st));
+    }
+  });
+  requestAnimationFrame(bucle);
+}
+bucle();
+})();
+
+/* ═══ miniaturas de los casos ═══ */
+(function(){
+  const R='rgba(201,36,26,', N='rgba(20,20,15,';
+  function pinta(cv){
+    const d=Math.min(devicePixelRatio||1,2), r=cv.getBoundingClientRect();
+    if(!r.width) return;
+    cv.width=r.width*d; cv.height=r.height*d;
+    const c=cv.getContext('2d'); c.setTransform(d,0,0,d,0,0);
+    const w=r.width, h=r.height;
+    c.clearRect(0,0,w,h);
+    const tipo=cv.dataset.mini;
+
+    if(tipo==='solo'){
+      for(let i=0;i<4;i++){
+        c.strokeStyle=i===3?R+'.9)':N+'.4)'; c.lineWidth=i===3?1.8:1.2;
+        const bw=w*.72-i*6;
+        c.beginPath(); c.roundRect(w/2-bw/2,h-16-i*19,bw,15,3); c.stroke();
+      }
+    } else if(tipo==='crm'){
+      for(let i=0;i<4;i++){
+        const x=w*(.14+i*.24);
+        c.strokeStyle=N+'.4)'; c.lineWidth=1.1;
+        c.beginPath(); c.roundRect(x-13,10,26,12,2); c.stroke();
+        c.strokeStyle=R+'.5)';
+        c.beginPath(); c.moveTo(x,24); c.bezierCurveTo(x,42,w/2,42,w/2,48); c.stroke();
+      }
+      c.strokeStyle=R+'.95)'; c.lineWidth=1.8;
+      c.beginPath(); c.roundRect(w/2-28,49,56,18,3); c.stroke();
+      c.fillStyle=N+'.2)';
+      for(let i=0;i<4;i++) c.fillRect(w*(.12+i*.24),76,w*.16,10);
+    } else {
+      const cols=5, filas=3, gw=w*.78, gh=h*.6;
+      const x0=w/2-gw/2, y0=h/2-gh/2, cw=gw/cols, ch=gh/filas;
+      for(let rr=0;rr<filas;rr++) for(let cc=0;cc<cols;cc++){
+        c.strokeStyle=N+'.22)'; c.lineWidth=1;
+        c.strokeRect(x0+cc*cw,y0+rr*ch,cw-3,ch-3);
+        if((rr*cols+cc)%3!==2){ c.fillStyle=R+'.35)'; c.fillRect(x0+cc*cw,y0+rr*ch,cw-3,ch-3); }
+      }
+    }
+  }
+  const minis=[...document.querySelectorAll('canvas[data-mini]')];
+  const todas=()=>minis.forEach(pinta);
+  addEventListener('resize',todas);
+  todas(); setTimeout(todas,120);
+  window.__minis=todas;
+})();
+
+/* ═══ subrayado rojo ═══ */
+(function(){
+  const io=new IntersectionObserver(es=>{
+    es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});
+  },{threshold:.2});
+  document.querySelectorAll('h2.big').forEach(el=>io.observe(el));
+})();
+</script>
