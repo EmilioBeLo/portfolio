@@ -9,12 +9,12 @@ dependencias ni proceso de compilación.
 ## Qué es
 
 Una sola página con tres vistas controladas por JavaScript (`#inicio`,
-`#trabajo`, `#cv`), cada una con su propia dirección. Los proyectos se
+`#proyectos`, `#cv`), cada una con su propia dirección. Los proyectos se
 cuentan con escenas dibujadas en `<canvas>` que avanzan con el scroll,
 y la portada incluye una calculadora de coste de oportunidad.
 
 - **Inicio** — propuesta de valor, para quién encaja, calculadora, resumen de casos
-- **Trabajo** — los tres proyectos a fondo
+- **Proyectos** — los tres proyectos a fondo
 - **CV** — currículum imprimible (botón de imprimir → PDF limpio)
 
 ## Stack
