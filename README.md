@@ -41,15 +41,14 @@ Cada push a `main` publica automáticamente.
 ```
 index.html      página completa (HTML + CSS + JS)
 og.png          imagen para vista previa al compartir el enlace
+foto.webp       foto personal en la sección "Quién hay detrás" (600×750px, pendiente de añadir)
 robots.txt      indexación para buscadores
 sitemap.xml     mapa del sitio
 ```
 
 ## Pendiente
 
-- [ ] Tres cicatrices (casos donde algo salió mal)
-- [ ] Dos testimonios con nombre y cargo reales
-- [ ] Foto personal en la sección "Quién hay detrás"
+- [ ] Añadir `foto.webp` (600×750px) en la raíz del repo — el HTML ya está listo, solo falta el archivo
 
 ## Licencia
 

@@ -32,6 +32,7 @@
   "name":"Emilio Benítez",
   "url":"https://emiliobenitez.com/",
   "jobTitle":"Desarrollador full stack",
+  "image":"https://emiliobenitez.com/foto.webp",
   "email":"mailto:emiliobeniloza@gmail.com",
   "telephone":"+34693062420",
   "address":{"@type":"PostalAddress","addressLocality":"Jumilla","addressRegion":"Murcia","addressCountry":"ES"},
@@ -141,6 +142,7 @@ h2.big.in::after{transform:scaleX(1);transition:transform .9s cubic-bezier(.16,1
 .scars .ruled>div{display:grid;grid-template-columns:1fr 1.3fr;gap:38px;align-items:baseline}
 .scars h3{font-family:var(--display);font-weight:700;font-size:clamp(18px,2vw,25px);margin:0;letter-spacing:-.02em;line-height:1.1}
 .scars p{margin:0;color:var(--grey);max-width:46ch}
+.scars p b{color:var(--ink);font-weight:700}
 
 .more{padding:12vh 0;border-top:1px solid var(--line)}
 .more .sub{color:var(--grey);max-width:50ch;margin:-3vh 0 4vh}
@@ -164,21 +166,15 @@ h2.big.in::after{transform:scaleX(1);transition:transform .9s cubic-bezier(.16,1
 .tg span.key{border-color:var(--accent);color:var(--accent);font-weight:700}
 .skills{display:grid;grid-template-columns:repeat(3,1fr);gap:40px}
 .sk{border-top:1px solid var(--ink)}
-.sk h4{font-weight:700;font-size:12px;letter-spacing:.14em;color:var(--accent);margin:14px 0}
+.sk h3{font-weight:700;font-size:12px;letter-spacing:.14em;color:var(--accent);margin:14px 0}
 .sk ul{margin:0;padding:0;list-style:none;font-size:14px;color:var(--grey);line-height:2}
 .sk.first li:nth-child(-n+3){color:var(--ink);font-weight:700}
 .bio{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
 .bio p{margin:0 0 18px;max-width:46ch}
-.mugshot{width:146px;height:182px;margin:0 0 24px;border:1px dashed var(--line);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;font-size:11px;font-weight:700;letter-spacing:.1em;color:var(--grey);padding:14px;gap:8px}
-.mugshot small{font-weight:400;letter-spacing:0;line-height:1.4;opacity:.85}
+.mugshot{width:146px;height:182px;margin:0 0 24px;border:1px solid var(--line);display:block;object-fit:cover}
 .facts{margin:0;padding:0;list-style:none}
 .facts li{display:flex;justify-content:space-between;gap:20px;padding:12px 0;border-bottom:1px solid var(--line);font-size:14px}
 .facts li span:first-child{color:var(--grey)}
-
-/* ── huecos ── */
-.hueco{position:relative}
-.hueco::after{content:'PENDIENTE';position:absolute;top:6px;right:0;font-weight:700;font-size:9px;letter-spacing:.14em;color:var(--accent);border:1px solid var(--accent);border-radius:99px;padding:2px 8px}
-.hueco p{color:var(--accent)}
 
 footer{border-top:1px solid var(--line);padding:6vh 0 5vh;font-size:13px;color:var(--grey)}
 footer .col{display:flex;flex-wrap:wrap;gap:12px 30px;justify-content:space-between}
@@ -199,7 +195,6 @@ footer a:hover{color:var(--accent);border-color:var(--accent)}
   .step + .step{margin-top:36px;padding-top:30px;border-top:1px solid var(--line)}
   .art{height:42svh;position:static}
   .who{position:static;display:block;margin-top:10px}
-  .hueco::after{position:static;display:inline-block;margin:10px 0 0}
 }
 
 @media print{
@@ -233,9 +228,10 @@ footer a:hover{color:var(--accent);border-color:var(--accent)}
     </ul>
   </div>
 </nav>
+<span id="contenido" tabindex="-1"></span>
 
 <!-- ══════════ INICIO ══════════ -->
-<div class="vista" id="v-inicio" role="main"><span id="contenido" tabindex="-1"></span>
+<div class="vista" id="v-inicio" role="main" aria-label="Inicio">
   <header class="hero">
     <div class="col">
       <p class="kicker">DESARROLLADOR FULL STACK · AUTÓNOMO · REMOTO</p>
@@ -267,7 +263,7 @@ footer a:hover{color:var(--accent);border-color:var(--accent)}
 </div>
 
 <!-- ══════════ PROYECTOS ══════════ -->
-<div class="vista" id="v-proyectos">
+<div class="vista" id="v-proyectos" role="main" aria-label="Proyectos">
   <header class="intro">
     <div class="col">
       <p class="kicker">TRES PROYECTOS EN PRODUCCIÓN</p>
@@ -276,7 +272,7 @@ footer a:hover{color:var(--accent);border-color:var(--accent)}
     </div>
   </header>
 
-  <main>
+  <div>
     <article class="act" data-escena="solo" data-pasos="2">
       <div class="stage"><div class="col">
         <div class="words">
@@ -343,16 +339,16 @@ footer a:hover{color:var(--accent);border-color:var(--accent)}
       </div></div>
       <div style="height:180vh" aria-hidden="true"></div>
     </article>
-  </main>
+  </div>
 
   <section class="scars">
     <div class="col">
       <h2 class="big">Lo que salió mal</h2>
       <p class="sub">Todos los portfolios enseñan el final bonito. Estas son las veces que me equivoqué.</p>
       <div class="ruled">
-        <div class="hueco"><h3>El chat se inventó una cifra</h3><p><b>RELLENA.</b> Qué pasó, qué tenías mal montado y qué cambiaste. Dos o tres frases, sin adornos.</p></div>
-        <div class="hueco"><h3>Algo que tuve que rehacer entero</h3><p><b>RELLENA.</b> Qué decidiste mal al principio y cuánto tardaste en darte cuenta.</p></div>
-        <div class="hueco"><h3>Un fallo en producción</h3><p><b>RELLENA.</b> El fallo, cómo te enteraste y qué hiciste esa tarde.</p></div>
+        <div><h3>El chat se inventó una cifra</h3><p>El chat de la agencia calculó mal el porcentaje de agendamiento de llamadas, un dato que sale de cruzar otros dos. Lo pillé yo mismo antes de que lo viera nadie. <b>El fallo no estaba en el cálculo, estaba en de dónde sacaba los datos el agente.</b></p></div>
+        <div><h3>Algo que tuve que rehacer entero</h3><p>En Hablaoo diseñé mal la base de datos: guardaba cosas en tablas que no les tocaba. Tardé tres días en darme cuenta. <b>Para entonces ya había que rehacer gran parte de la estructura entera.</b></p></div>
+        <div><h3>Un fallo en producción</h3><p>En la agencia heredé un CRM con la arquitectura mal hecha desde antes de que yo llegara: los datos fallaban al guardarse. <b>Tuve que rehacerla entera con usuarios ya en producción, sin perder ni un dato suyo.</b></p></div>
       </div>
     </div>
   </section>
@@ -386,7 +382,7 @@ footer a:hover{color:var(--accent);border-color:var(--accent)}
 </div>
 
 <!-- ══════════ CV ══════════ -->
-<div class="vista" id="v-cv">
+<div class="vista" id="v-cv" role="main" aria-label="CV">
   <header class="head">
     <div class="col">
       <p class="kicker">CURRÍCULUM</p>
@@ -399,7 +395,7 @@ footer a:hover{color:var(--accent);border-color:var(--accent)}
         <span><a href="mailto:emiliobeniloza@gmail.com">emiliobeniloza@gmail.com</a></span>
         <span><a href="https://github.com/EmilioBeLo">github.com/EmilioBeLo</a></span>
       </div>
-      <button class="cta" id="imprimir">Imprimir o guardar en PDF</button>
+      <button class="cta" id="imprimir" type="button">Imprimir o guardar en PDF</button>
     </div>
   </header>
 
@@ -477,7 +473,7 @@ footer a:hover{color:var(--accent);border-color:var(--accent)}
       <h2>Competencias</h2>
       <div class="skills">
         <div class="sk first">
-          <h4>IA Y AUTOMATIZACIÓN</h4>
+          <h3>IA Y AUTOMATIZACIÓN</h3>
           <ul>
             <li>APIs de modelos de lenguaje</li>
             <li>Chatbots</li>
@@ -487,7 +483,7 @@ footer a:hover{color:var(--accent);border-color:var(--accent)}
           </ul>
         </div>
         <div class="sk">
-          <h4>DESARROLLO</h4>
+          <h3>DESARROLLO</h3>
           <ul>
             <li>React · Angular</li>
             <li>JavaScript · TypeScript</li>
@@ -497,7 +493,7 @@ footer a:hover{color:var(--accent);border-color:var(--accent)}
           </ul>
         </div>
         <div class="sk">
-          <h4>PRODUCTO Y CLIENTE</h4>
+          <h3>PRODUCTO Y CLIENTE</h3>
           <ul>
             <li>Trato directo con cliente</li>
             <li>Presupuesto y alcance</li>
@@ -515,10 +511,10 @@ footer a:hover{color:var(--accent);border-color:var(--accent)}
       <h2>Quién hay detrás</h2>
       <div class="bio">
         <div>
-          <div class="mugshot hueco">TU FOTO<br><small>Una normal. Sin filtros, sin traje falso, sin fondo de estudio.</small></div>
+          <img class="mugshot" src="foto.webp" alt="Emilio Benítez" width="600" height="750" loading="lazy" decoding="async">
           <p>Trabajo como autónomo, que para una empresa pequeña suele ser lo más cómodo: facturo y ya está, sin altas ni compromisos largos.</p>
           <p>Cuando no sé hacer algo, lo digo y lo aprendo. Ha pasado en los tres proyectos de este currículum.</p>
-          <p class="hueco"><b>RELLENA.</b> Dos frases sobre algo que no tenga que ver con programar. Es lo único de esta página que nadie puede escribir por ti.</p>
+          <p>Fuera del ordenador soy más de pista que de sofá: fútbol, pádel y tenis. <b>Se me dan mejor que el código, si me preguntas a mí.</b></p>
         </div>
         <ul class="facts">
           <li><span>Base</span><span>Jumilla, Murcia</span></li>
@@ -566,7 +562,11 @@ function mostrar(id){
     if(el) el.classList.toggle('activa', v===id);
   });
   document.querySelectorAll('a[data-ir]').forEach(a=>{
-    if(a.closest('.nav')) a.classList.toggle('aqui', a.dataset.ir===id);
+    if(a.closest('.nav')){
+      const aqui=a.dataset.ir===id;
+      a.classList.toggle('aqui', aqui);
+      if(aqui) a.setAttribute('aria-current','page'); else a.removeAttribute('aria-current');
+    }
   });
   try{ document.title=TITULOS[id]; }catch(e){}
 
